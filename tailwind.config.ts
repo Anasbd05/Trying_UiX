@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type {Config} from "tailwindcss";
 
 export default {
   content: [
@@ -9,9 +9,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'text': '#08060e',
+        'background': '#f6f2ff',
+        'primary': '#6d4acc',
+        'secondary': '#9c82e3',
+        'accent': '#7d58e3',
       },
+      fontFamily: {
+        "Ibm-sans": "IBM_Plex_Mono"
+      }
     },
   },
   plugins: [],
