@@ -10,10 +10,9 @@ export default {
     extend: {
       colors: {
         'text': '#08060e',
-        'background': '#f6f2ff',
-        'primary': '#6d4acc',
-        'secondary': '#9c82e3',
-        'accent': '#7d58e3',
+        'background': '#ffedd5',
+        'primary': '#fb923c',
+        'accent': '#f97316',
       },
       fontFamily: {
         "Ibm-sans": "IBM_Plex_Mono"
