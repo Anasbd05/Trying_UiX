@@ -9,7 +9,7 @@ const releway = Raleway({
 
 
 export const metadata: Metadata = {
-  title: "Generate Images  ",
+  title: "Generate Images",
   description: "Generated Images from Images ",
 };
 
@@ -20,11 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
+      <body cz-shortcut-listen="true"
         className={`${releway.className} bg-background antialiased`}
       >
         {children}
       </body>
-    </html>
+    </html >
   );
 }
