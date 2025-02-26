@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React,{useState} from 'react';
 
 const TryIt = () => {
-    const [style,setStyle] = useState("Photorealistic");
+    const [style,setStyle] = useState("Realistic");
     const [image,setImage] = useState("/pic.jpg");
     const [prompt,setPrompt] = useState('');
 
@@ -33,9 +33,17 @@ const TryIt = () => {
                             Generate
                         </button>
                     </div>
+                    <div className='flex gap-2 flex-wrap items-center justify-center mt-3'>
+                        <button onClick={() => setStyle("Realistic")} className={`py-2 px-4 bg-accent2   font-semibold hover:scale-105 duration-300  rounded-lg ${style === "Realistic" && "bg-black text-white"}`}>Realistic</button>
+                        <button onClick={() => setStyle("Anime")} className={`py-2 px-4 bg-accent2  font-semibold hover:scale-105 duration-300   rounded-lg ${style === "Anime" && "bg-black text-white"}`}>Anime</button>
+                        <button onClick={() => setStyle("Minimalist")} className={`py-2 px-4 bg-accent2 font-semibold hover:scale-105 duration-300   rounded-lg ${style === "Minimalist" && "bg-black text-white"}`}>Minimalist</button>
+                        <button onClick={() => setStyle("CyberPunk")} className={`py-2 px-4 bg-accent2 font-semibold hover:scale-105 duration-300   rounded-lg ${style === "CyberPunk" && "bg-black text-white"}`}>CyberPunk</button>
+                        <button onClick={() => setStyle("Carton")} className={`py-2 px-4 bg-accent2  font-semibold hover:scale-105 duration-300  rounded-lg ${style === "Carton" && "bg-black text-white"}`}>Carton</button>
+                        <button onClick={() => setStyle("Scifi")} className={`py-2 px-4 bg-accent2  font-semibold hover:scale-105  duration-300 rounded-lg ${style === "Scifi" && "bg-black text-white"}`}>Sci-fi</button>
+                    </div>
                     <div className='mt-6'>
                         <Image src={image} className='rounded-lg blur-sm hover:blur-none' alt='' height={500} width={500} />
-                        <button className='py-2 px-6 bg-accent rounded-lg mt-2'>
+                        <button className='py-2 px-8 duration-300 bg-accent2 font-bold rounded-lg mt-2 hover:shadow-[0px_4px_#000] '>
                             <a download={true} href={image} >Download</a>
                         </button>
                     </div>

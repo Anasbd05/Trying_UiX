@@ -13,11 +13,12 @@ export default {
         'background': '#ebe2c9',
         'primary': '#f38378',
         'accent': '#FF4500',
+        "accent2": "#FFD466",
       },
       fontFamily: {
         "Ibm-sans": "IBM_Plex_Mono"
       }
     },
   },
-  plugins: [],
+  plugins: [require('daisyui'),],
 } satisfies Config;

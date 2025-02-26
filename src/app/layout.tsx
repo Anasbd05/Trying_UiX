@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body cz-shortcut-listen="true"
-        className={`${releway.className} bg-background antialiased`}
+        className={`${releway.className} pt-4 bg-background antialiased`}
       >
         {children}
       </body>
