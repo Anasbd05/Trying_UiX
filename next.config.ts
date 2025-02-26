@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "jhsrufbgcwyvmcshfcoe.supabase.co"
+        hostname: "blob.haxed.net"
       }
     ]
   }

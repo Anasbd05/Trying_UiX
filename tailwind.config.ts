@@ -11,7 +11,7 @@ export default {
       colors: {
         'text': '#282425',
         'background': '#ebe2c9',
-        'primary': '#f38378',
+        'primary': '#EA5455',
         'accent': '#FF4500',
         "accent2": "#FFD466",
       },

@@ -1,15 +1,42 @@
 "use client";
 
+import axios from 'axios';
 import Image from 'next/image';
 import React,{useState} from 'react';
 
 const TryIt = () => {
     const [style,setStyle] = useState("Realistic");
-    const [image,setImage] = useState("/pic.jpg");
+    const [image,setImage] = useState("");
     const [prompt,setPrompt] = useState('');
+    const [loading,setLoading] = useState(false);
 
     const HandleGenerateImage = async () => {
-        // Your image generation logic
+
+        setLoading(true)
+
+        const options = {
+            method: 'POST',
+            url: 'https://sdxl.p.rapidapi.com/v1/txt2img',
+            headers: {
+                'x-rapidapi-key': 'f65522c5bcmshea97c260f086c20p10e6dcjsn6f02a95c684a',
+                'x-rapidapi-host': 'sdxl.p.rapidapi.com',
+                'Content-Type': 'application/json'
+            },
+            data: {
+                prompt: `${prompt} in a ${style} style `
+            }
+        };
+
+        try {
+            const response = await axios.request(options);
+            console.log(response.data);
+            setImage(response.data[0]);
+        } catch(error) {
+            console.error(error);
+        } finally {
+            setLoading(false)
+            setPrompt('')
+        }
     };
     return (
         <div className='py-16 bg-primary sm:py-20 px-10 sm:px-5'>
@@ -30,7 +57,7 @@ const TryIt = () => {
                             type="text"
                         />
                         <button onClick={HandleGenerateImage} className='bg-primary py-1 duration-300 px-5 hover:shadow-[0px_3px_#000] rounded-lg'>
-                            Generate
+                            {loading ? "Generating" : "Generate"}
                         </button>
                     </div>
                     <div className='flex gap-2 flex-wrap items-center justify-center mt-3'>
@@ -41,12 +68,16 @@ const TryIt = () => {
                         <button onClick={() => setStyle("Carton")} className={`py-2 px-4 bg-accent2  font-semibold hover:scale-105 duration-300  rounded-lg ${style === "Carton" && "bg-black text-white"}`}>Carton</button>
                         <button onClick={() => setStyle("Scifi")} className={`py-2 px-4 bg-accent2  font-semibold hover:scale-105  duration-300 rounded-lg ${style === "Scifi" && "bg-black text-white"}`}>Sci-fi</button>
                     </div>
-                    <div className='mt-6'>
-                        <Image src={image} className='rounded-lg blur-sm hover:blur-none' alt='' height={500} width={500} />
-                        <button className='py-2 px-8 duration-300 bg-accent2 font-bold rounded-lg mt-2 hover:shadow-[0px_4px_#000] '>
-                            <a download={true} href={image} >Download</a>
-                        </button>
-                    </div>
+                    {loading && <span className="loading loading-bars loading-lg mt-6"></span>}
+                    {image !== "" &&
+                        <div className='mt-6'>
+
+                            <Image src={image} className='rounded-lg' alt='' height={500} width={500} />
+                            <button className='py-2 px-8 duration-300 bg-accent2 font-bold rounded-lg mt-2 hover:shadow-[0px_4px_#000] '>
+                                <a download={true} href={image} >Download</a>
+                            </button>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

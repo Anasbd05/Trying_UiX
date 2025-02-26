@@ -13,7 +13,7 @@ const Features = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 my-4 md:grid-cols-3 w-full justify-center gap-5">
                     {features.map((feature) => (
-                        <div key={feature.id} className='flex bg-primary/60 duration-500 p-5 rounded-lg hover:scale-105 hover:shadow-[4px_4px_#000] flex-col gap-2'>
+                        <div key={feature.id} className='flex bg-primary/60 shadow-md duration-500 p-5 rounded-lg hover:scale-105 hover:shadow-[4px_4px_#000] flex-col gap-2'>
                             {feature.icon}
                             <h1 className='font-bold text-xl my-3 font-Ibm-sans leading-none tracking-tight'>{feature.title}</h1>
                             <p className='text-text leading-relaxed text-justify font-medium'>{feature.description}</p> {/* Fixed this line */}
