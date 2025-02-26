@@ -57,7 +57,7 @@ const TryIt = () => {
                             type="text"
                         />
                         <button onClick={HandleGenerateImage} className='bg-primary py-1 duration-300 px-5 hover:shadow-[0px_3px_#000] rounded-lg'>
-                            {loading ? "Generating" : "Generate"}
+                            {loading ? "Generating..." : "Generate"}
                         </button>
                     </div>
                     <div className='flex gap-2 flex-wrap items-center justify-center mt-3'>
