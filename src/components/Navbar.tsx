@@ -21,7 +21,9 @@ const Navbar = () => {
                 <Link className='font-Ibm-sans duration-300  hover:py-1 hover:px-3 hover:bg-gray-200 rounded-lg ' href={"#pricing"}>Pricing</Link>
                 <Link className='font-Ibm-sans  duration-300 hover:py-1 hover:px-3 hover:bg-gray-200 rounded-lg ' href={"#faqs"}>Faqs</Link>
             </ul>
-            <button className='py-1 duration-500  bg-accent hover:shadow-[0px_3px_#000] px-5 rounded-full'>Sign In</button>
+            <Link href={"/login"}>
+                <button className='py-1 duration-500  bg-accent hover:shadow-[0px_3px_#000] px-5 rounded-full'>Sign In</button>
+            </Link>
         </nav>
     )
 }

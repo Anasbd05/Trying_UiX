@@ -40,6 +40,7 @@ export const pricing = [
       "Priority customer support",
       "Cancel anytime",
     ],
+    url: "https://buy.stripe.com/test_6oE7vM0Vgb5T0vuaEG"
   },
   {
     id : 2,
@@ -52,6 +53,7 @@ export const pricing = [
       "High-resolution downloads",
       "No recurring fees",
     ],
+    url:"https://buy.stripe.com/test_fZeaHY47s3Drba8145"
   }
 ];
 const faqs = [

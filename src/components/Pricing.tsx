@@ -1,5 +1,6 @@
 import {pricing} from '@/data'
 import {Check} from 'lucide-react'
+import Link from 'next/link'
 import React from 'react'
 
 const Pricing = () => {
@@ -32,7 +33,9 @@ const Pricing = () => {
                                     </li>
                                 ))}
                             </ul>
-                            <button className='py-2 w-full bg-accent rounded-lg mt-4 hover:opacity-80'>Choose Plan</button>
+                            <Link href={price.url}>
+                                <button className='py-2 w-full bg-accent rounded-lg mt-4 hover:opacity-80'>Choose Plan</button>
+                            </Link>
                         </div>
                     ))
                 }
